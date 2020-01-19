@@ -21,9 +21,9 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetButtonDown ("Jump") && isGrounded) {
             velocity.y = Mathf.Sqrt (jumpHeight * -2f * gravity);
         }
-        if (Input.GetButtonDown ("SquatDown")) {
+        if (Input.GetKeyDown(KeyCode.LeftControl)) {
             this.transform.localScale = new Vector3 (1, 0.5f, 1);
-        } else if (Input.GetButtonUp ("SquatDown")) {
+        } else if (Input.GetKeyUp(KeyCode.LeftControl)) {
             this.transform.localScale = new Vector3 (1, 1, 1);
         }
         if (Input.GetKeyDown (KeyCode.LeftShift)) {
