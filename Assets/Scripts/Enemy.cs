@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour {
     public static int EnemyDamage = 1;
     public static bool GiveDamage = false;
     GameObject target;
+    private Rigidbody rbd;
     public UnityEngine.AI.NavMeshAgent agent { get; private set; }
     // Start is called before the first frame update
     void Start () {
@@ -17,6 +18,7 @@ public class Enemy : MonoBehaviour {
         agent.speed = speed;
         agent.updateRotation = true;
         agent.updatePosition = true;
+        rbd = GetComponent<Rigidbody> ();
     }
 
     // Update is called once per frame
